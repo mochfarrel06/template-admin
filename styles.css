@@ -56,6 +56,12 @@
     --box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* General Styles */
 body {
     font-family: var(--font-family-base);
@@ -112,7 +118,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sidebar-nav .sidebar-item {
-    margin-bottom: 20px; /* Menambahkan jarak antar item */
+    margin-bottom: 30px; /* Menambahkan jarak antar item */
+    margin-top: 20px;
 }
 
 .sidebar-link {
@@ -145,6 +152,26 @@ h1, h2, h3, h4, h5, h6 {
     padding: var(--spacing-sm);
     color: var(--text-light);
     text-decoration: none;
+}
+
+.sidebar-link .link-dropdown .link-content {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-link .link-dropdown{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.link-dropdown .icon-link {
+    margin-right: 0;
+    transition: transform 0.3s ease; /* Animasi rotasi */
+}
+
+.rotate-90 {
+    transform: rotate(90deg); /* Rotasi 90 derajat */
 }
 
 .sidebar-dropdown-link:hover {
